@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="cssi2.css">
+    <!-- <script src="jjava2.js"></script> -->
+    
+</head>
+<body>
+
+    <body>
+        <div class="container">
+          <div id="forms-container">
+            <form id="registerForm" class="form active">
+              <h2>Register</h2>
+              <!-- <div class="input-group"> -->
+                <!-- <label for="registerUsername">Username</label>
+                <input type="text" id="registerUsername" required>
+              </div>
+              <div class="input-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" required>
+              </div>
+              <button type="submit">Register</button>
+              <p id="registerMessage"></p>
+              <p>Already have an account? <a href="#" id="showSignIn">Sign In</a></p>
+            </form> -->
+            
+            <div class="input-group">
+            <form id="registrationForm" onsubmit="return validateForm()">
+              <label for="registername">Name</label>
+              <input type="text" id="name" name="name" placeholder="Name">
+            </div>
+            <div class="input-group">
+              <label for="registersurnamename">Last Name</label>
+              <input type="text" id="surname" name="surname" placeholder="Surname">
+            </div>
+            <div class="input-group">
+              <label for="registerUsername">Username</label>
+              <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+            <div class="input-group">
+              <label for="registeremail">E-Mail</label>
+              <input type="text" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="input">
+              <label for="registerPassword">Password</label>
+              <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <br>
+            <br>
+            <div class="input">
+              <input type="submit" value="Submit">
+            </div>
+            <p>Already have an account? <a href="#" id="showSignIn">Sign In</a></p>
+            </form>
+         
+      
+            <form id="signInForm" class="form">
+              <h2>Sign In</h2>
+              <div class="input-group">
+                <label for="signInUsername">Username</label>
+                <input type="text" id="signInUsername" required>
+              </div>
+              <div class="input-group">
+                <label for="signInPassword">Password</label>
+                <input type="password" id="signInPassword" required>
+              </div>
+              <button type="submit">Sign In</button>
+              <p id="signInMessage"></p>
+              <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            </form>
+          </div>
+        </div>
+</body>
+
+<script>
+
+// document.getElementById("showSignIn").addEventListener("click", function(event) {
+//     event.preventDefault();
+//     document.getElementById("registerForm").classList.remove("active");
+//     document.getElementById("signInForm").classList.add("active");
+//   });
+  
+//   document.getElementById("showRegister").addEventListener("click", function(event) {
+//     event.preventDefault();
+//     document.getElementById("signInForm").classList.remove("active");
+//     document.getElementById("registerForm").classList.add("active");
+//   });
+  
+//   document.getElementById("registerForm").addEventListener("submit", function(event) {
+//     event.preventDefault();
+    
+//     // Get input values
+//     const registerUsername = document.getElementById("registerUsername").value;
+//     const registerPassword = document.getElementById("registerPassword").value;
+  
+//     // Implement your registration logic here (this is a basic example)
+//     // For a real-world application, you'd send this data to a server and handle it securely
+//     console.log("Registered:", registerUsername, registerPassword);
+//     document.getElementById("registerMessage").innerText = "Registration successful!";
+//   });
+  
+//   document.getElementById("signInForm").addEventListener("submit", function(event) {
+//     event.preventDefault();
+    
+//     // Get input values
+//     const signInUsername = document.getElementById("signInUsername").value;
+//     const signInPassword = document.getElementById("signInPassword").value;
+  
+//     // Implement your sign-in logic here (this is a basic example)
+//     // For a real-world application, you'd send this data to a server and handle it securely
+//     console.log("Sign In:", signInUsername, signInPassword);
+//     document.getElementById("signInMessage").innerText = "Sign In successful!";
+//   });
+
+  function validateForm() {
+      var name = document.getElementById('nameRegex').value;
+      var surname = document.getElementById('nameRegex').value;
+      var username = document.getElementById('registerUsername').value;
+      var email = document.getElementById('emailRegex').value;
+      var password = document.getElementById('passwordRegex').value;
+      var nameRegex = /^[A-Z][a-z]*$/;
+      var usernameRegex = /^.{8,15}$/;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      var passwordRegex = /^[A-Z].*[0-9]{3}$/;
+
+      if (!registername.match(nameRegex)) {
+        alert('Name should start with an uppercase letter and contain only text.');
+        return false;
+      }
+      if (!registersurnamename.match(nameRegex)) {
+        alert('Surname should start with an uppercase letter and contain only text.');
+        return false;
+      }
+      if (!registerUsername.match(registerUsername)) {
+        alert('Username should be between 8 and 15 characters.');
+        return false;
+      }
+      if (!registeremail.match(emailRegex)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+      if (!registerPassword.match(passwordRegex)) {
+        alert('Password should start with an uppercase letter and end with 3 numbers.');
+        return false;
+      }
+      return true;
+    }
+</script>
+</html>
